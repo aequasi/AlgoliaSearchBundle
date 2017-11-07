@@ -26,14 +26,12 @@ services:
             - "@?logger"
 
     algolia.indexer_subscriber.orm:
-        public: true
         parent: algolia.indexer_subscriber.abstract
         class: "%algolia.indexer_subscriber.orm.class%"
         tags:
             - {name: doctrine.event_subscriber}
 
     algolia.indexer_subscriber.mongodb_odm:
-        public: true
         parent: algolia.indexer_subscriber.abstract
         class: "%algolia.indexer_subscriber.mongodb_odm.class%"
         tags:
