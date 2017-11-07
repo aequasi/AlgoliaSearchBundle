@@ -5,6 +5,11 @@ parameters:
     algolia.indexer_subscriber.mongodb_odm.class: Algolia\AlgoliaSearchBundle\EventListener\AlgoliaSearchDoctrineMongoDBODMEventSubscriber
 
 services:
+    Algolia\AlgoliaSearchBundle\Command\:
+        autowire: true
+        autoconfigure: true
+        resource: '../../Command/*'
+        
     algolia.indexer:
         class: "%algolia.indexer.class%"
         calls:
